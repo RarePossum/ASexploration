@@ -7,15 +7,17 @@ output: pdf_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
 ```
 
 ## Plotting
 
 
 ```{r cars}
+rm(list=ls())
 setwd("D:/Other/Projects/ASexploration")
 frames = read.csv("atkspeed2.csv", header=TRUE, colClasses=c("factor", "numeric", "numeric", "numeric", "numeric", "numeric"))
-Fend.Finit = Frame.End - Frame.Init
+frames[,2]=frames[,2]/100
 head(frames)
 Shenhe = frames[frames$Char=="Shenhe",]
 Chongyun = frames[frames$Char=="Chongyun",]
@@ -24,16 +26,32 @@ attach(frames)
 ```
 
 ```{r}
-plot(RelAtkFrame~AtkSpd)
+plot(RelAtkFrame~I(AtkSpd))
 
 ```
 
-## Including Plots
+## Test plot
 
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+razor.lm = lm(Razor$RelAtkFrame~Razor$AtkSpd)
+atkspd.lm = lm(RelAtkFrame~AtkSpd)
+atkspd.ploy = lm(RelAtkFrame~poly(AtkSpd, 2))
+atkspd.hyperbola = lm(RelAtkFrame~I(AtkSpd^-1))
+summary(atkspd.lm)
+summary(atksped.ploy)
+summary(atkspd.hyperbola)
+ggplot(frames, aes(AtkSpd, RelAtkFrame))+geom_point()+geom_smooth(method="lm", level=0.99)
+plot(RelAtkFrame~AtkSpd)
+abline(atkspd.lm, col="red")
+polypred = predict(atkspd.ploy)
+ix= sort(AtkSpd, index.return=TRUE)$ix
+lines(AtkSpd[ix], polypred[ix], col="blue")
+hyperpred = predict(atkspd.hyperbola)
+ix= sort(AtkSpd, index.return=TRUE)$ix
+lines(AtkSpd[ix], hyperpred[ix], col="darkgreen")
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

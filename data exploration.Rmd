@@ -39,9 +39,11 @@ razor.lm = lm(Razor$RelAtkFrame~Razor$AtkSpd)
 atkspd.lm = lm(RelAtkFrame~AtkSpd)
 atkspd.ploy = lm(RelAtkFrame~poly(AtkSpd, 2))
 atkspd.hyperbola = lm(RelAtkFrame~I(AtkSpd^-1))
+atkspd.t = lm(RelAtkFrame~I(AtkSpd^-1)+poly(AtkSpd, 2))
 summary(atkspd.lm)
 summary(atksped.ploy)
 summary(atkspd.hyperbola)
+summary(atkspd.t)
 ggplot(frames, aes(AtkSpd, RelAtkFrame))+geom_point()+geom_smooth(method="lm", level=0.99)
 plot(RelAtkFrame~AtkSpd)
 abline(atkspd.lm, col="red")
@@ -49,9 +51,30 @@ polypred = predict(atkspd.ploy)
 ix= sort(AtkSpd, index.return=TRUE)$ix
 lines(AtkSpd[ix], polypred[ix], col="blue")
 hyperpred = predict(atkspd.hyperbola)
-ix= sort(AtkSpd, index.return=TRUE)$ix
 lines(AtkSpd[ix], hyperpred[ix], col="darkgreen")
+tpred = predict(atkspd.t)
+lines(AtkSpd[ix], tpred[ix], col="darkorchid2")
 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r noshenhe}
+frames2= frames[frames$Char!="Shenhe",]
+atkspd.lm = lm(frames2$RelAtkFrame~frames2$AtkSpd)
+atkspd.ploy = lm(frames2$RelAtkFrame~poly(frames2$AtkSpd, 2))
+atkspd.hyperbola = lm(frames2$RelAtkFrame~I(frames2$AtkSpd^-1))
+atkspd.t = lm(frames2$RelAtkFrame~I(frames2$AtkSpd^-1)+poly(frames2$AtkSpd, 2))
+summary(atkspd.lm)
+summary(atksped.ploy)
+summary(atkspd.hyperbola)
+summary(atkspd.t)
+ggplot(frames2, aes(AtkSpd, RelAtkFrame))+geom_point()+geom_smooth(method="lm", level=0.99)
+plot(frames2$RelAtkFrame~frames2$AtkSpd)
+abline(atkspd.lm, col="red")
+polypred = predict(atkspd.ploy)
+ix= sort(frames2$AtkSpd, index.return=TRUE)$ix
+lines(frames2$AtkSpd[ix], polypred[ix], col="blue")
+hyperpred = predict(atkspd.hyperbola)
+#lines(frames2$AtkSpd[ix], hyperpred[ix], col="darkgreen")
+tpred = predict(atkspd.t)
+#lines(frames2$AtkSpd[ix], tpred[ix], col="darkorchid2")
+```

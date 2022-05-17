@@ -1,0 +1,39 @@
+---
+title: "Genshin Attack Speed TC exploration"
+author: "Rare Possum"
+date: "17/05/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Plotting
+
+
+```{r cars}
+setwd("D:/Other/Projects/ASexploration")
+frames = read.csv("atkspeed2.csv", header=TRUE, colClasses=c("factor", "numeric", "numeric", "numeric", "numeric", "numeric"))
+Fend.Finit = Frame.End - Frame.Init
+head(frames)
+Shenhe = frames[frames$Char=="Shenhe",]
+Chongyun = frames[frames$Char=="Chongyun",]
+Razor = frames[frames$Char=="Razor",]
+attach(frames)
+```
+
+```{r}
+plot(RelAtkFrame~AtkSpd)
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

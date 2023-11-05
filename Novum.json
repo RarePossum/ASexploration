@@ -129,7 +129,7 @@
     "spec": 2,
     "background": {
         "blur": 0,
-        "url": "https://przemec.github.io/Novum/assets/images/app.png",
+        "url": "https://raw.githubusercontent.com/RarePossum/ASexploration/main/Novum.png",
         "alpha": 0.3,
         "color": "#220403"
     

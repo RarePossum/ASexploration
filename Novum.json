@@ -33,7 +33,7 @@
             "#76534f"
         ],
         "BACKGROUND_PRIMARY": [
-            "#8a0e0a"
+            "#6e0505"
         ],
         "BACKGROUND_SECONDARY": [
             "#b81c1c"
@@ -42,22 +42,22 @@
             "#b81c1c"
         ],
         "BACKGROUND_TERTIARY": [
-            "#8a0e0a"
+            "#6e0505"
         ],
         "BACKGROUND_ACCENT": [
             "#94473E"
         ],
         "BACKGROUND_FLOATING": [
-            "#8a0e0a"
+            "#6e0505"
         ],
         "BACKGROUND_MOBILE_PRIMARY": [
-            "#8a0e0a"
+            "#6e0505"
         ],
         "BACKGROUND_MOBILE_SECONDARY": [
             "#b81c1c"
         ],
         "BACKGROUND_NESTED_FLOATING": [
-            "#8a0e0a"
+            "#6e0505"
         ],
        
         "BACKGROUND_MESSAGE_HOVER": [
@@ -73,7 +73,7 @@
             "#94473E"
         ],
         "BACKGROUND_MODIFIER_ACCENT": [
-            "#8a0e0a"
+            "#6e0505"
         ],
         "CHANNELTEXTAREA_BACKGROUND": [
             "#4a2727"
@@ -88,13 +88,13 @@
             "#d74a44"
         ],
         "KEYBOARD": [
-            "#8a0e0a"
+            "#6e0505"
         ],
         "CHANNEL_ICON": [
             "#FFB4A8"
         ],
         "CHAT_BACKGROUND": [
-            "#8a0e0a"
+            "#6e0505"
         ],
         "SPOILER_HIDDEN_BACKGROUND": [
             "#D1796D"
@@ -110,11 +110,11 @@
         "PRIMARY_360": "#FFDAD3",
         "PRIMARY_400": "#FFDAD3",
         "PRIMARY_500": "#4a2727",
-        "PRIMARY_600": "#8a0e0a",
-        "PRIMARY_630": "#8a0e0a",
-        "PRIMARY_660": "#8a0e0a",
-        "PRIMARY_700": "#8a0e0a",
-        "PRIMARY_800": "#8a0e0a",
+        "PRIMARY_600": "#6e0505",
+        "PRIMARY_630": "#6e0505",
+        "PRIMARY_660": "#6e0505",
+        "PRIMARY_700": "#6e0505",
+        "PRIMARY_800": "#6e0505",
 
         "BRAND_260": "#FFB4A8",
         "BRAND_360": "#FFDAD3",
@@ -131,7 +131,7 @@
         "blur": 0,
         "url": "https://raw.githubusercontent.com/RarePossum/ASexploration/main/Novum.png",
         "alpha": 0.3,
-        "color": "#8a0e0a"
+        "color": "#6e0505"
     
     },
     "plus":{
